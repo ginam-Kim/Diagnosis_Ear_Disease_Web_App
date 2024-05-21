@@ -10,7 +10,7 @@ import io
 import matplotlib
 
 
-st.set_page_config(page_title="귀 질환 진단 서비스", page_icon="📸", layout = 'wide')
+st.set_page_config(page_title="귀 질환 진단 서비스", page_icon="📸")
 
 st.image('./image/main.png', use_column_width=True)
 
@@ -32,16 +32,21 @@ st.markdown('''
         margin-bottom: 10px;
         border-top: 3px solid #ffd700;
     }
+            
+    [data-testid="StyledFullScreenButton"]{
+            visibility: hidden
+    }
+                    
 </style>
 ''', unsafe_allow_html=True)
 
 
 st.markdown('''
-가정용 귀 내시경을 통해 **직접** 찍은 사진에 대해 **정상/비정상 유무 및 확률**을 알려드립니다.
+📌 가정용 귀 내시경을 통해 **직접** 찍은 사진에 대해 **정상/비정상 유무 및 확률**을 알려드립니다.
 ''')
 
 st.markdown('''
-**이미지를 업로드**하거나 **예시 이미지를 선택**해 주세요.
+📌 **이미지를 업로드**하거나 **예시 이미지를 선택**해 주세요.
 ''')
 
 
@@ -271,9 +276,9 @@ with st.spinner("### ⏳ 잠시만 기다려주세요."):
     if (uploaded_file and not use_default_image1 and not use_default_image2) or \
     (not uploaded_file and use_default_image1 and not use_default_image2) or \
     (not uploaded_file and not use_default_image1 and use_default_image2):
-        with st.expander("모델이 어느 부분을 보고 특정 클래스로 분류하였는지 시각적으로 확인해보아요!", expanded=True):
+        with st.expander("🔍 모델이 어느 부분을 보고 특정 클래스로 분류하였는지 시각적으로 확인해보아요!", expanded=True):
 
-            col1, col2, col3 = st.columns([4.5, 4.5, 1])
+            col1, col2 = st.columns([4.5, 4.5])
             with col1: # 히트맵 이미지 들어갈 곳
                 image = Image.open(default_image_path1)
                 st.image(hm, caption='Heatmap', use_column_width=True)
@@ -281,14 +286,16 @@ with st.spinner("### ⏳ 잠시만 기다려주세요."):
             with col2: # 원본 + 히트맵 이미지 들어갈 곳
                 image = Image.open(default_image_path2)
                 st.image(overlay, caption='Overlapped Image', use_column_width=True)
-                st.image('./image/color_bar.png', caption='', use_column_width=True)
 
-            with col3:
-                st.image('./image/color_bar.png', caption='', use_column_width=True)
+            # with col3:
+            #     st.image('./image/color_bar.png', caption='', use_column_width=True)
                 
+
+            st.image('./image/color_bar_가로.png', caption='', use_column_width=True)
+
             st.markdown('''
-                **빨간 부분**일수록, 모델이 판단의 근거로써 중요하게 고려한 부분입니다.
-            ''')
+                ❗ **빨간 부분**일수록, 모델이 판단의 근거로써 중요하게 고려한 부분입니다.
+            ''')            
 
 
 
