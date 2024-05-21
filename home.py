@@ -176,8 +176,8 @@ best_model = load_model("./model/crop_model.h5")
 
 
 # 기본 이미지 경로
-default_image_path1 = ".\image\otitexterna_27.png" 
-default_image_path2 = ".\image\정상_1.png"
+default_image_path1 = "./image/otitexterna_27.png" 
+default_image_path2 = "./image/정상_1.png"
 
 
 with st.spinner("### ⏳ 잠시만 기다려주세요."):
