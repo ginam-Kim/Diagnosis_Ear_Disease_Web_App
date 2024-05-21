@@ -273,7 +273,7 @@ with st.spinner("### ⏳ 잠시만 기다려주세요."):
     (not uploaded_file and not use_default_image1 and use_default_image2):
         with st.expander("모델이 어느 부분을 보고 특정 클래스로 분류하였는지 시각적으로 확인해보아요!", expanded=True):
 
-            col1, col2, col3 = st.columns([4.5, 4.5])
+            col1, col2 = st.columns([4.5, 4.5])
             with col1: # 히트맵 이미지 들어갈 곳
                 image = Image.open(default_image_path1)
                 st.image(hm, caption='Heatmap', use_column_width=True)
