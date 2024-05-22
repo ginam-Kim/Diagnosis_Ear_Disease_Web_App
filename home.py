@@ -30,7 +30,7 @@ st.markdown('''
         text-align: center;
         padding: 20px 0;
         margin-bottom: 10px;
-        border-top: 3px solid #ffd700;
+        border-top: 3px solid #87CEFA;
     }
             
     [data-testid="StyledFullScreenButton"]{
@@ -298,9 +298,12 @@ with st.spinner("### ⏳ 잠시만 기다려주세요."):
             ''')            
 
 
+st.write('')
+st.write('')
+# st.write('')
 
 st.markdown('''
 <div>
-    <h2 class='result2'><span style="color:#000000	;">CLEAR(강하람, 김기남, 좌대현)</span></h2>
+    <h2 class='result2'><span>CLEAR(강하람, 김기남, 좌대현)</span></h2>
 </div>
 ''', unsafe_allow_html=True)
