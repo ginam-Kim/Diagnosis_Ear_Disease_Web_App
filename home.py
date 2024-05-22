@@ -30,7 +30,7 @@ st.markdown('''
         text-align: center;
         padding: 20px 0;
         margin-bottom: 10px;
-        border-top: 3px solid #87CEFA;
+        border-top: 3px solid #D6E2FD;
     }
             
     [data-testid="StyledFullScreenButton"]{
